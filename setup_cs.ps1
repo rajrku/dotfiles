@@ -10,4 +10,4 @@ echo
 echo
 echo 
 $hostId = READ-HOST "Get the HostId from tbl_ServiceHost..."
-echo 'lr runner -command “Set-HostTierLimit  -Limit 20000 -Tier Trusted -HostId $hostId”'
+lr runner -command "Set-HostTierLimit -Limit 20000 -Tier Trusted -HostId $hostId"
