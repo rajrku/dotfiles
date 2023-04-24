@@ -1,5 +1,6 @@
 lr runner -command 'Set-RunnerResourceGroup -SubscriptionId 8a53cb9a-a3a5-4602-aa2d-8c171edde3c7 -ResourceGroupName rajrku-minikube4'
 lr runner -command 'Set-TrustTierLimit -Tier Trusted -Limit 104000; Set-TrustTierLimit -Tier Neutral -Limit 26000'
+lr runner -command 'Set-FeatureFlag -FeatureName GitHub.Actions.Runner.Server.EnableTierEnforcement -State On -AllowUnregisteredFeature'
 
 echo "Launch this link before proceeding further... http://127.0.0.1/organizations/github/settings/actions/github-hosted-runners/new"
 echo "Create a new larger runner..."
