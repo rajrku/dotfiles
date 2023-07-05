@@ -8,7 +8,8 @@ echo "Github service status: " $GH_STATUS
 if [[ "$GH_STATUS" == "Stopped" ]]
 then
   # nohup service github start 
-  nohup /workspaces/github/script/server 
+  cd /workspaces/github
+  nohup script/server &
   service github start
   service launch start
 fi
@@ -23,8 +24,8 @@ then
   echo "Starting actions service..."
   # nohup /workspaces/github/script/actions/start-actions
   /workspaces/actions/actions-dotnet/src/script/setup-codespaces-runner.ps1
-  src
-  b
-  deploy mps,token,actions,runner -DeployAzureRelay
+  # src
+  # b
+  # deploy mps,token,actions,runner -DeployAzureRelay
 fi
 echo "Successfully started actions services..."
