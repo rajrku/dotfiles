@@ -25,6 +25,6 @@ then
   /workspaces/actions/actions-dotnet/src/script/setup-codespaces-runner.ps1
   src
   b
-  deploy mps,token,ac,actions,runner
+  deploy mps,token,actions,runner -DeployAzureRelay
 fi
 echo "Successfully started actions services..."
