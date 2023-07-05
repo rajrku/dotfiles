@@ -9,6 +9,8 @@ if [[ "$GH_STATUS" == "Stopped" ]]
 then
   # nohup service github start 
   nohup /workspaces/github/script/server  &
+  service github start
+  service launch start
 fi
 
 echo "Successfully started github service..."
