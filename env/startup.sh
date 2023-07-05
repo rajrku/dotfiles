@@ -7,7 +7,8 @@ echo "Github service status: " $GH_STATUS
 
 if [[ "$GH_STATUS" == "Stopped" ]]
 then
-  nohup service github start 
+  # nohup service github start 
+  nohup /workspaces/github/script/server  &
 fi
 
 echo "Successfully started github service..."
@@ -18,7 +19,10 @@ minikube status
 if [[ $? -ne 0 ]]
 then
   echo "Starting actions service..."
-  nohup /workspaces/github/script/actions/start-actions
-  script/setup-codespaces-runner.ps1
+  # nohup /workspaces/github/script/actions/start-actions
+  /workspaces/actions/actions-dotnet/src/script/setup-codespaces-runner.ps1
+  src
+  b
+  deploy mps,token,ac,actions,runner
 fi
 echo "Successfully started actions services..."
