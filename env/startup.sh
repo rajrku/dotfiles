@@ -25,9 +25,10 @@ if [[ $? -ne 0 ]]
 then
   echo "Starting actions service..."
   # nohup /workspaces/github/script/actions/start-actions
-  # /workspaces/actions/actions-dotnet/src/script/setup-codespaces-runner.ps1
+  cd /workspaces/actions/actions-dotnet/src/
+  script/setup-codespaces-runner.ps1
   # src
   # b
-  deploy mps token actions runner -DeployAzureRelay
+  # deploy mps token actions runner -DeployAzureRelay
 fi
 echo "Successfully started actions services..."
