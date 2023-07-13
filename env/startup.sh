@@ -27,8 +27,5 @@ then
   # nohup /workspaces/github/script/actions/start-actions
   cd /workspaces/actions/actions-dotnet/src/
   script/setup-codespaces-runner.ps1
-  # src
-  # b
-  # deploy mps token actions runner -DeployAzureRelay
 fi
 echo "Successfully started actions services..."
