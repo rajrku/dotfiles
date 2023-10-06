@@ -1,6 +1,12 @@
 #!/bin/bash
 
-start-actions
+kubectl get pods | grep -i runner 
+
+if [[ $? -ne 0 ]]
+then
+	start-actions
+fi
+
 GH_STATUS=`service github status`
 echo "Github service status: " $GH_STATUS
 
