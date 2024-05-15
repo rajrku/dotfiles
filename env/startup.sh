@@ -1,12 +1,5 @@
 #!/bin/bash
 
-kubectl get pods | grep -i runner 
-
-if [[ $? -ne 0 ]]
-then
-	start-actions
-fi
-
 GH_STATUS=`service github status`
 echo "Github service status: " $GH_STATUS
 
@@ -42,13 +35,14 @@ fi
 # minikube profile actions-dev
 # minikube status
 
-# kubectl get pods | grep -i runner 
+kubectl get pods | grep -i runner 
 
-# if [[ $? -ne 0 ]]
-# then
-#   echo "Starting actions service..."
-#   # nohup /workspaces/github/script/actions/start-actions
-#   cd /workspaces/actions/actions-dotnet/src/
-#   script/setup-codespaces-runner.ps1
-# fi
-# echo "Successfully started actions services..."
+if [[ $? -ne 0 ]]
+then
+    echo "Starting actions service..."
+    # nohup /workspaces/github/script/actions/start-actions
+    cd /workspaces/actions/actions-dotnet/src/
+    script/setup-codespaces-runner.ps1
+fi
+
+echo "Successfully started actions services..."
