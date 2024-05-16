@@ -42,6 +42,7 @@ then
     echo "Starting actions service..."
     # nohup /workspaces/github/script/actions/start-actions
     cd /workspaces/actions/actions-dotnet/src/
+    & ./init.sh "Connect-Azure"
     script/setup-codespaces-runner.ps1
 fi
 
