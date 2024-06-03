@@ -7,6 +7,9 @@ service github status
 echo -n "Launch Service Status: "
 service launch status
 echo "********************************************************"
+echo -n "Kredz Service Status: "
+service kredz-service status
+echo "********************************************************"
 echo
 echo "Actions Pods Status: "
 echo "********************************************************"
