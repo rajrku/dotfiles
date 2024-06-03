@@ -11,6 +11,6 @@ echo
 echo "Actions Pods Status: "
 echo "********************************************************"
 echo 
-kubectl get pods
+kubectl get pods --all-namespaces
 echo
 echo "********************************************************"
