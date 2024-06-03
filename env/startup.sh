@@ -5,7 +5,6 @@ echo "Github service status: " $GH_STATUS
 
 if [[ "$GH_STATUS" == "Stopped" ]]
 then
-
 	( cd $SKYRISE_PATH && script/build && script/setup-codespaces-runner.ps1 && reset-tenant-mapping )
 
 	# Ensure Launch/Kreds are started in the background
@@ -14,26 +13,6 @@ then
 	# Start dotcom in the background
 	(cd $GITHUB_PATH && script/dx/server-start )
 fi
-
-# echo "Setting up workspace..."
-# echo "Starting github service..."
-
-# GH_STATUS=`service github status`
-# echo "Github service status: " $GH_STATUS
-
-# if [[ "$GH_STATUS" == "Stopped" ]]
-# then
-#   # nohup service github start 
-#   cd /workspaces/github
-#   nohup script/server &
-#   service github start
-#   service launch start
-# fi
-
-# echo "Successfully started github service..."
-# echo "Starting actions services..."
-# minikube profile actions-dev
-# minikube status
 
 kubectl get pods | grep -i runner 
 
