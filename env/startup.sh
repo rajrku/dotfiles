@@ -5,7 +5,7 @@ echo "Github service status: " $GH_STATUS
 
 if [[ "$GH_STATUS" == "Stopped" ]]
 then
-	( cd $SKYRISE_PATH && script/build && script/setup-codespaces-runner.ps1 && reset-tenant-mapping )
+	# ( cd $SKYRISE_PATH && script/build && script/setup-codespaces-runner.ps1 && reset-tenant-mapping )
 
 	# Ensure Launch/Kreds are started in the background
 	( service launch start && service kredz-service start )
