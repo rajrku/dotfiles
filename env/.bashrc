@@ -6,7 +6,7 @@ if [ -d "/workspaces/github" ]; then
     skyrise
 fi
 
-alias co='git checkout users/rajenr/$@'
+alias co='git checkout users/rajenr/$1'
 alias coma='git checkout master; git pull'
 alias comain='git checkout main; git pull'
 alias cco='git checkout -b users/rajenr/$@'
