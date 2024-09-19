@@ -1,5 +1,7 @@
 alias ducks='du -cks * | sort -rn | head'
 export PATH=$PATH:~:.
 chmod +x ~/*.sh
-~/startup.sh
-skyrise
+if [ -d "/workspaces/github" ]; then
+    ~/startup.sh
+    skyrise
+fi
